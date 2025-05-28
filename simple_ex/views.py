@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from .problem import problem
 def home(request):
-    p=problem()
-    print(p)
+    result=None
+    if request.method=='POST':
+        result=problem()
+
     context = {
-        'problem': p,
+        'result': result,
     }
     return render(request, 'home.html', context)
+
 
 def result(request):
     p = problem()

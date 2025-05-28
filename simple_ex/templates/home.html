@@ -6,12 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-     <h1>Welcome to Home Page</h1>
+     <h1> Home Page</h1>
+     
+    <form method="POST">
+        {%csrf_token%}
+        <button type="submit">
+            Show Result
+        </button>
+    </form>
+    {% if result %}
+        <h3>Result</h3>
+        <p>{{result}}</p>
 
-    <a href="/result" >
+    {%endif%}
+ <!--  <a href="/result" >
         <button>
           Show Result
-        </button></a>
+        </button></a> -->
    
 </style>
 </body>
